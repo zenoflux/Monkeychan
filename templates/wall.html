@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}The Wall{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+
+  <h2 class="mb-4 text-center">Get Down to Monkey Business...</h2>
+
+  <!-- New Post Form -->
+  <div class="card mb-4 p-3">
+    <form action="{{ url_for('wall') }}" method="POST" enctype="multipart/form-data">
+      <textarea name="content" class="form-control mb-2" placeholder="Say something..." rows="3"></textarea>
+      <input type="file" name="image" class="form-control mb-2">
+      <button type="submit" class="btn" style="background-color: var(--accent); color: var(--bg);">Post</button>
+    </form>
+  </div>
+
+  <!-- Posts -->
+  {% for post in posts %}
+    <div class="card mb-3 p-3">
+
+      <div class="d-flex align-items-center mb-2">
+        {% if post.user.profile_pic != "default.png" %}
+          <img src="{{ url_for('static', filename='uploads/' + post.user.profile_pic) }}"
+               class="rounded-circle me-2" style="width:40px; height:40px; object-fit:cover; border: 2px solid var(--accent);">
+        {% else %}
+          <div class="rounded-circle me-2 d-flex align-items-center justify-content-center"
+               style="width:40px; height:40px; background-color: var(--bg); color: var(--fg); font-size:0.7rem; border:2px solid var(--accent);">
+            No Pic
+          </div>
+        {% endif %}
+        <strong style="color: var(--fg);">{{ post.user.name }}</strong>
+        <small class="text-muted ms-auto">{{ post.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+      </div>
+
+      <p class="mt-2 mb-1" style="color: var(--fg);">{{ post.content }}</p>
+
+      {% if post.image_filename %}
+        <img src="{{ url_for('static', filename='uploads/' + post.image_filename) }}"
+             class="post-img rounded mb-2">
+      {% endif %}
+
+      <!-- Inline reply form -->
+      <form action="{{ url_for('wall') }}" method="POST" enctype="multipart/form-data"
+            class="reply-form mt-2 p-2 border rounded">
+        <input type="hidden" name="parent_id" value="{{ post.id }}">
+        <textarea name="content" class="form-control mb-2" placeholder="Write a reply..." rows="2"></textarea>
+        <input type="file" name="image" class="form-control mb-2">
+        <button type="submit" class="btn btn-sm" style="background-color: var(--accent); color: var(--bg);">Post Reply</button>
+      </form>
+
+      <!-- Replies -->
+      {% for reply in post.replies_list %}
+        <div class="ms-4 mt-3 border-start ps-3">
+          <div class="d-flex align-items-center mb-1">
+            {% if reply.user.profile_pic != "default.png" %}
+              <img src="{{ url_for('static', filename='uploads/' + reply.user.profile_pic) }}"
+                   class="rounded-circle me-2" style="width:30px; height:30px; object-fit:cover; border: 2px solid var(--accent);">
+            {% else %}
+              <div class="rounded-circle me-2 d-flex align-items-center justify-content-center"
+                   style="width:30px; height:30px; background-color: var(--bg); color: var(--fg); font-size:0.6rem; border:2px solid var(--accent);">
+                No Pic
+              </div>
+            {% endif %}
+            <strong style="color: var(--fg);">{{ reply.user.name }}</strong>
+            <small class="text-muted ms-auto">{{ reply.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+          </div>
+
+          <p class="mb-1" style="color: var(--fg);">{{ reply.content }}</p>
+
+          {% if reply.image_filename %}
+            <img src="{{ url_for('static', filename='uploads/' + reply.image_filename) }}"
+                 class="post-img rounded mt-1 mb-2">
+          {% endif %}
+        </div>
+      {% endfor %}
+
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  img.post-img {
+    max-width: 200px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  img.post-img.expanded {
+    max-width: 100%;
+  }
+  .reply-form {
+    background-color: var(--bg-alt);
+    border-color: var(--accent);
+  }
+  .card {
+    background-color: var(--bg-alt);
+    border-color: var(--accent);
+  }
+</style>
+{% endblock %}
