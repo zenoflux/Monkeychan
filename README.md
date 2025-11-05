@@ -26,8 +26,8 @@ project/
 
 Getting Started
 Clone the Project
-git clone https://github.com/zenoflux/Monkeychan
-cd Monkeychan
+>git clone https://github.com/zenoflux/Monkeychan
+'''cd Monkeychan'''
 
 Set Up a Virtual Environment
 python -m venv venv
