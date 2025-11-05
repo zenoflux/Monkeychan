@@ -62,7 +62,7 @@ python app.py
 Then open your browser and visit:
 http://localhost:8181
 
-🗄 Database Models
+Database Models:
 users Table
 Field	Description
 id	Unique user ID
@@ -78,12 +78,11 @@ content	The message text
 timestamp	Auto-generated post time
 parent_id	ID of parent message (for replies)
 image_filename	Optional image attached to the post
-📸 Image Uploads
 
+
+Image Uploads:
 Allowed file types: png, jpg, jpeg, gif
-
 Profile pictures save as: username_avatar.ext
-
 Wall post images are saved with a timestamp for uniqueness
 
 
