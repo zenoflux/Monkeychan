@@ -1,6 +1,7 @@
 # Monkeychan
 
-Monkeychan is a simple Flask-based imageboard-style web app. It started as a fun late-night project to learn Flask and see if I could make a minimal "chan"-like message board.
+Welcome to Monkeychan, I got bored and decided to try to learn Flask. 
+Here's my attempt at a simple "chan"-like image board.
 
 It's lightweight, beginner-friendly, and easy to run locally.
 
@@ -23,7 +24,7 @@ SQLite database using SQLAlchemy
 ## Project Structure
 ```
 project/
-|-- app.py               # Main Flask app
+|-- monkeychan.py               # Main Flask app
 |-- templates/           # HTML (Jinja2) templates
 |-- static/uploads/      # Profile pictures & post images
 |-- .env                 # Environment variables
@@ -47,14 +48,14 @@ python -m venv venv
 Activate it:
 
 Windows:
-
+```
 venv\Scripts\activate
-
+```
 
 macOS/Linux:
-
+```
 source venv/bin/activate
-
+```
 4. Install Dependencies
  ```
  pip install -r requirements.txt
@@ -74,7 +75,7 @@ UPLOAD_FOLDER=static/uploads
 ```
 
 5. Run the App
-   ```python app.py```
+   ```python monkeychan.py```
 
 
 Then visit:
