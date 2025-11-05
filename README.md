@@ -1,22 +1,22 @@
-🌐 Flask Social Wall App
+Welcome to Monkeychan
 
-This is a simple social web app built with Flask — think of it like a mini message board where users can sign up, post messages (with or without images), reply to each other, and even upload profile pictures.
+I was bored one night and decided to learn some Flask and see if I could make a dumb little "chan"-like image board.
 
 It’s lightweight, beginner-friendly, and easy to run locally.
 
-🎯 What Can It Do?
+What Can It Do?
 
-Here’s what this app currently supports:
+Some basic functions include
 
-✅ User registration, login, and logout
-✅ Secure password storage (hashed with Werkzeug)
-✅ User profiles with email editing and profile picture upload
-✅ A shared “Wall” where users can post messages or images
-✅ Replies to posts (threaded messaging)
-✅ Sessions that expire after 3 minutes of inactivity
-✅ SQLite database powered by SQLAlchemy
+User registration, login, and logout
+Secure password storage (hashed with Werkzeug)
+User profiles with email editing and profile picture upload
+A shared “Wall” where users can post messages or images
+Replies to posts (threaded messaging)
+Sessions that expire after 3 minutes of inactivity
+SQLite database powered by SQLAlchemy
 
-🧱 Project Structure
+Project Structure
 project/
 |-- app.py               # Main Flask app
 |-- templates/           # HTML (Jinja2) templates
@@ -24,12 +24,12 @@ project/
 |-- .env                 # Environment variables
 |-- requirements.txt     # Python dependencies
 
-⚙️ Getting Started
-1️⃣ Clone the Project
-git clone <your-repo-url>
-cd <your-project-folder>
+Getting Started
+Clone the Project
+git clone https://github.com/zenoflux/Monkeychan
+cd Monkeychan
 
-2️⃣ Optional: Set Up a Virtual Environment
+Set Up a Virtual Environment
 python -m venv venv
 
 
@@ -44,10 +44,10 @@ macOS/Linux:
 
 source venv/bin/activate
 
-3️⃣ Install Dependencies
+Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Create a .env File
+Create a .env File
 
 Create a file named .env in the project root and add:
 
@@ -55,7 +55,7 @@ SECRET_KEY=your_secret_key_here
 DATABASE_URL=sqlite:///users.sqlite3
 UPLOAD_FOLDER=static/uploads
 
-5️⃣ Run the App
+Run the App
 python app.py
 
 
@@ -86,32 +86,6 @@ Profile pictures save as: username_avatar.ext
 
 Wall post images are saved with a timestamp for uniqueness
 
-💡 Future Improvements
 
-Some ideas to make this app even better:
-
-Add CSRF protection
-
-Add likes/reactions to posts
-
-Improve styling with Bootstrap or Tailwind
-
-Add pagination or infinite scroll on the wall
-
-Add email verification or notifications
-
-🤝 Contributing
-
-Want to help improve the project?
-
-Fork the repository
-
-Create a new branch (feature-name)
-
-Commit your changes
-
-Submit a pull request!
-
-📜 License
-
+License:
 This project is open-source under the MIT License.
