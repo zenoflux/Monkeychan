@@ -20,7 +20,7 @@ Sessions that expire after 3 minutes of inactivity
 
 SQLite database using SQLAlchemy
 
-Project Structure
+## Project Structure
 ```
 project/
 |-- app.py               # Main Flask app
