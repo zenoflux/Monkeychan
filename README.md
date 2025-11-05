@@ -21,13 +21,14 @@ Sessions that expire after 3 minutes of inactivity
 SQLite database using SQLAlchemy
 
 Project Structure
+```
 project/
 |-- app.py               # Main Flask app
 |-- templates/           # HTML (Jinja2) templates
 |-- static/uploads/      # Profile pictures & post images
 |-- .env                 # Environment variables
 |-- requirements.txt     # Python dependencies
-
+```
 ## Getting Started
 1. Clone the Repository:
 ```
