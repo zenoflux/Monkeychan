@@ -32,7 +32,7 @@ project/
 ## Getting Started
 1. Clone the Repository:
 ```
-git clone https://github.com/zenoflux/Monkeychan'''
+git clone https://github.com/zenoflux/Monkeychan
 ```
 2. Enter the directory:
 ```
