@@ -64,14 +64,14 @@ source venv/bin/activate
 5. Create a .env File
 
 
-Linux:
-```
- touch .env
-```
-Windows:
-```
-type nul >.env
-```
+  Linux:
+  ```
+   touch .env
+  ```
+  Windows:
+  ```
+   type nul >.env
+  ```
 
 6. Add the following to the .env file
 
