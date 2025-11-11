@@ -62,6 +62,8 @@ source venv/bin/activate
  ```
 
 5. Create a .env File
+
+
 Linux:
 ```
  touch .env
